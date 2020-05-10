@@ -24,7 +24,7 @@ class Solution:
                 j += 2
         return A
 
-# Solution 2: Two pass:
+# Solution 2: 
 class Solution:
     def sortArrayByParityII(self, A: List[int]) -> List[int]:
         j = 1
