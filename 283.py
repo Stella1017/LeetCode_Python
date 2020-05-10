@@ -20,7 +20,7 @@ class Solution:
         for i in range(nonZeroAt, len(nums)):
             nums[i] = 0
 
-# Solution 2 (Slow)
+# Solution 2 (slow)
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         """
@@ -32,3 +32,16 @@ class Solution:
                 while nums[j] == 0 and j < len(nums)-1:
                     j += 1
                 nums[i], nums[j] = nums[j], nums[i]
+                
+# Solution 3 by miketung2013
+class Solution:
+    def moveZeroes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        pos = 0       
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[pos], nums[i] = nums[i], nums[pos]
+                pos += 1              
