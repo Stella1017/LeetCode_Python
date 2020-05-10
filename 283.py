@@ -19,3 +19,16 @@ class Solution:
                 nonZeroAt += 1
         for i in range(nonZeroAt, len(nums)):
             nums[i] = 0
+
+# Solution 2 (Slow)
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        for i in range(len(nums)-1):
+            if nums[i] == 0:
+                j = i + 1
+                while nums[j] == 0 and j < len(nums)-1:
+                    j += 1
+                nums[i], nums[j] = nums[j], nums[i]
